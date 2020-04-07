@@ -23,7 +23,7 @@ print(f1(1, 2))
 def f2(*args):
     res = 0
     for num in args:
-        res = res + num
+        res += num
     return res
 
 
@@ -35,7 +35,7 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # How do you have to modify the f2 call below to make this work?
-print(f2(a))    # Should print 22
+print(f2(*a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
@@ -45,15 +45,14 @@ print(f2(a))    # Should print 22
 # YOUR CODE HERE
 
 
-# def f3(*args):
-#     res = 0
-#     for x in args:
-#         if len(args) <= 1:
-#             return x + 1
-#         elif len(args) > 1:
-#             res = res + x
-#             return x
-#     return res
+def f3(*args):
+    res = 0
+    for x in args:
+        if len(args) == 1:
+            return args[0] + 1
+        else:
+            res = res + x
+    return res
 
 
 print(f3(1, 2))  # Should print 3
