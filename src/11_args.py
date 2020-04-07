@@ -71,7 +71,6 @@ print(f3(8))     # Should print 9
 def f4(**kwargs):
     for key in kwargs:
         print("key: {}, value: {}".format(key, kwargs[key]))
-        # print(key)
 
 
 # Should print
