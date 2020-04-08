@@ -18,6 +18,9 @@ class Waypoint(LatLon):
     def __init__(self, name, lat, lon):
         super().__init__(lat, lon)
         self.name = name
+
+    def __str__(self):
+        return f"Name: {self.name}, Latitude: {self.latitude}, Longitude: {self.longitude}"
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
@@ -39,7 +42,7 @@ print("Waypoint ==>", w.name, w.latitude, w.longitude)
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
-print("42 ==>", w)
+print("Line 45 ==>", w)
 
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
